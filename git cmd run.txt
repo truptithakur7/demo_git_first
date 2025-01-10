@@ -1,0 +1,678 @@
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash
+$ git --version
+git version 2.47.1.windows.1
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash
+$ git config --global
+error: no action specified
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash
+$ git config --global user.name "Trupti"
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash
+$ git config --global user.email "thakur.truptivinod@gmail.com"
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Trupti
+user.email=thakur.truptivinod@gmail.com
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash
+$ ls
+index.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash
+$ git init
+Initialized empty Git repository in C:/Users/trupt/OneDrive/Documents/Git bash/.git/
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ ls
+about.html  index.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git add index.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git commit -m "first commit"
+[master (root-commit) 96082c1] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git add -A
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git commit -m "second commit"
+[master d09e86f] second commit
+ 1 file changed, 14 insertions(+)
+ create mode 100644 about.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git checkout about.html
+Updated 1 path from the index
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git commit -m "change third commit"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git add -about.html
+error: unknown switch `a'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --[no-]dry-run    dry run
+    -v, --[no-]verbose    be verbose
+
+    -i, --[no-]interactive
+                          interactive picking
+    -p, --[no-]patch      select hunks interactively
+    -e, --[no-]edit       edit current diff and apply
+    -f, --[no-]force      allow adding otherwise ignored files
+    -u, --[no-]update     update tracked files
+    --[no-]renormalize    renormalize EOL of tracked files (implies -u)
+    -N, --[no-]intent-to-add
+                          record only the fact that the path will be added later
+    -A, --[no-]all        add changes from all tracked and untracked files
+    --[no-]ignore-removal ignore paths removed in the working tree (same as --no-all)
+    --[no-]refresh        don't add, only refresh the index
+    --[no-]ignore-errors  just skip files which cannot be added because of errors
+    --[no-]ignore-missing check if - even missing - files are ignored in dry run
+    --[no-]sparse         allow updating entries outside of the sparse-checkout cone
+    --[no-]chmod (+|-)x   override the executable bit of the listed files
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git add about.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git commit -m "change third commit"
+[master ea8c071] change third commit
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git diff
+diff --git a/about.html b/about.html
+index 2e3db1d..f5b4920 100644
+--- a/about.html
++++ b/about.html
+@@ -10,7 +10,7 @@
+     <h1> Welcome to about page</h1>
+     <p> This is learning git about page </p>
+     <p> Welcome about page </p>
+-
++    <p> how are you </p>
+ </body>
+ </html>
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git add about.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git add index.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+        modified:   index.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git diff --staged
+diff --git a/about.html b/about.html
+index 2e3db1d..f5b4920 100644
+--- a/about.html
++++ b/about.html
+@@ -10,7 +10,7 @@
+     <h1> Welcome to about page</h1>
+     <p> This is learning git about page </p>
+     <p> Welcome about page </p>
+-
++    <p> how are you </p>
+ </body>
+ </html>
+
+diff --git a/index.html b/index.html
+index e69de29..9bbcf09 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,14 @@
++<!DOCTYPE html>
++<html lang="en">
++    <head>
++        <meta charset="UTF-8">
++        <meta http-equiv="X-UA-Compatible" content="IE=edge">
++        <meta name="viewport" content="width=device-width, initial-scale=1.0">
++ <title>Home page</title>
++</head>
++<body>
++    <h1> Welcome to home page</h1>
++    <p> This is learning git</p>
++    <p> how are you </p>
++</body>
++</html>
+\ No newline at end of file
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git diff HEAD
+diff --git a/about.html b/about.html
+index 2e3db1d..f5b4920 100644
+--- a/about.html
++++ b/about.html
+@@ -10,7 +10,7 @@
+     <h1> Welcome to about page</h1>
+     <p> This is learning git about page </p>
+     <p> Welcome about page </p>
+-
++    <p> how are you </p>
+ </body>
+ </html>
+
+diff --git a/index.html b/index.html
+index e69de29..9bbcf09 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,14 @@
++<!DOCTYPE html>
++<html lang="en">
++    <head>
++        <meta charset="UTF-8">
++        <meta http-equiv="X-UA-Compatible" content="IE=edge">
++        <meta name="viewport" content="width=device-width, initial-scale=1.0">
++ <title>Home page</title>
++</head>
++<body>
++    <h1> Welcome to home page</h1>
++    <p> This is learning git</p>
++    <p> how are you </p>
++</body>
++</html>
+\ No newline at end of file
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git show
+commit ea8c071541326d7013f0256c53a4a84337265cab (HEAD -> master)
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:51:50 2025 +0900
+
+    change third commit
+
+diff --git a/about.html b/about.html
+index 2cafa12..2e3db1d 100644
+--- a/about.html
++++ b/about.html
+@@ -9,6 +9,8 @@
+ <body>
+     <h1> Welcome to about page</h1>
+     <p> This is learning git about page </p>
++    <p> Welcome about page </p>
+
+ </body>
+-</html>
+\ No newline at end of file
++</html>
++
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git log
+commit ea8c071541326d7013f0256c53a4a84337265cab (HEAD -> master)
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:51:50 2025 +0900
+
+    change third commit
+
+commit d09e86f84f92f7ec2b73d639b34a2e76d8e5e6b4
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:45:39 2025 +0900
+
+    second commit
+
+commit 96082c1560ff3b11824b8738d4a79829f1872cc8
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:41:07 2025 +0900
+
+    first commit
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git log -2
+commit ea8c071541326d7013f0256c53a4a84337265cab (HEAD -> master)
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:51:50 2025 +0900
+
+    change third commit
+
+commit d09e86f84f92f7ec2b73d639b34a2e76d8e5e6b4
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:45:39 2025 +0900
+
+    second commit
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git log --stat
+commit ea8c071541326d7013f0256c53a4a84337265cab (HEAD -> master)
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:51:50 2025 +0900
+
+    change third commit
+
+ about.html | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit d09e86f84f92f7ec2b73d639b34a2e76d8e5e6b4
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:45:39 2025 +0900
+
+    second commit
+
+ about.html | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+commit 96082c1560ff3b11824b8738d4a79829f1872cc8
+Author: Trupti <thakur.truptivinod@gmail.com>
+Date:   Fri Jan 10 17:41:07 2025 +0900
+
+    first commit
+
+ index.html | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git  status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+        modified:   index.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git commit -m "fourth commit"
+[master 9bb1cb0] fourth commit
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git  status
+On branch master
+nothing to commit, working tree clean
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ ls
+about.html  index.html  services.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git add services.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git  status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   services.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git rm --cached services.html
+rm 'services.html'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git  status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        services.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git add -A
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git  status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   services.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git rm services.html
+error: the following file has changes staged in the index:
+    services.html
+(use --cached to keep the file, or -f to force removal)
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git rm -f services.html
+rm 'services.html'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git branch --list
+* master
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git branch loginin
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git branch --list
+  loginin
+* master
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git checked loginin
+git: 'checked' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git checkout loginin
+Switched to branch 'loginin'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git add login.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git status
+On branch loginin
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   login.html
+
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git commit -m "login page added"
+[loginin 104d89a] login page added
+ 1 file changed, 13 insertions(+)
+ create mode 100644 login.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git status
+On branch loginin
+nothing to commit, working tree clean
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ gls
+bash: gls: command not found
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ ls
+about.html  index.html  login.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git branch --list
+* loginin
+  master
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git checkout master
+Switched to branch 'master'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git checkout loginin
+Switched to branch 'loginin'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git branch login2
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git branch --list
+  login2
+* loginin
+  master
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git checkout login2
+Switched to branch 'login2'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (login2)
+$ git checkout loginin
+Switched to branch 'loginin'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git checkout login2
+Switched to branch 'login2'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (login2)
+$ git add register.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (login2)
+$ git commit -m "register page added"
+[login2 0e558b1] register page added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 register.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (login2)
+$ git checkout loginin
+Switched to branch 'loginin'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git checkout master
+Switched to branch 'master'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git branch -d login2
+error: the branch 'login2' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D login2'
+hint: Disable this message with "git config advice.forceDeleteBranch false"
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git branch -D login2
+Deleted branch login2 (was 0e558b1).
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ rm register.html
+rm: cannot remove 'register.html': No such file or directory
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git checkout login
+error: pathspec 'login' did not match any file(s) known to git
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git checkout loginin
+Switched to branch 'loginin'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git merge master
+Already up to date.
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git checkout master
+Switched to branch 'master'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git merge loginin
+Updating 9bb1cb0..104d89a
+Fast-forward
+ login.html | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+ create mode 100644 login.html
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git branch --list
+  loginin
+* master
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git checkout loginin
+Switched to branch 'loginin'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git branch --list
+* loginin
+  master
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (loginin)
+$ git checkout master
+Switched to branch 'master'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git branch -d loginin
+Deleted branch loginin (was 104d89a).
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (master)
+$ git checkout -b register
+Switched to a new branch 'register'
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (register)
+$ git branch --list
+  master
+* register
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (register)
+$ git commit -a -m "register page added in register branch"
+On branch register
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        register.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+trupt@LAPTOP-GNPDTLU8 MINGW64 ~/OneDrive/Documents/Git bash (register)
+$ git add . && git commit -a -m "register page added in register branch"
+[register 700eecb] register page added in register branch
+ 1 file changed, 11 insertions(+)
+ create mode 100644 register.html
+
